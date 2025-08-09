@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Résumé Builder + Gemini Score</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <script type="module" crossorigin
+          src="https://esm.run/@google/generative-ai"></script>
+</head>
+<body class="p-4 max-w-3xl mx-auto">
+  <h1 class="text-2xl font-bold mb-4">Build your résumé</h1>
+
+  <form id="cvForm" class="space-y-4">
+
+    <fieldset class="border p-4 rounded-xl">
+      <legend class="font-semibold">Contact</legend>
+      <input name="name"     required placeholder="Full name" class="w-full" />
+      <input name="phone"    required type="tel" placeholder="Phone" class="w-full" />
+      <input name="email"    required type="email" placeholder="Email" class="w-full" />
+      <input name="location"           placeholder="City, Country" class="w-full" />
+    </fieldset>
+
+    <fieldset class="border p-4 rounded-xl">
+      <legend class="font-semibold">Links</legend>
+      <input name="website"   placeholder="Personal website / portfolio" class="w-full" />
+      <input name="linkedin"  placeholder="LinkedIn URL" class="w-full" />
+      <input name="github"    placeholder="GitHub URL" class="w-full" />
+      <textarea name="otherLinks" placeholder="Other links - one per line" class="w-full"></textarea>
+    </fieldset>
+
+    <fieldset class="border p-4 rounded-xl">
+      <legend class="font-semibold">Professional Summary</legend>
+      <textarea name="summary" placeholder="A concise career summary (3–4 sentences)" class="w-full"></textarea>
+    </fieldset>
+
+    <fieldset class="border p-4 rounded-xl">
+      <legend class="font-semibold">Expertise & Key Competencies</legend>
+      <textarea name="expertise" placeholder="e.g. Cloud Architecture · Data Analysis · Product Management" class="w-full"></textarea>
+    </fieldset>
+
+    <fieldset class="border p-4 rounded-xl">
+      <legend class="font-semibold">Languages & Technologies</legend>
+      <input name="programmingLanguages" placeholder="Programming languages (comma‑separated)" class="w-full" />
+      <textarea name="skills"     placeholder="Frameworks, tools, databases, etc." class="w-full"></textarea>
+    </fieldset>
+
+    <fieldset class="border p-4 rounded-xl">
+      <legend class="font-semibold">Experience</legend>
+      <textarea name="experience" placeholder="List roles, companies, dates, achievements – one block per role" class="w-full" rows="6"></textarea>
+    </fieldset>
+
+    <fieldset class="border p-4 rounded-xl">
+      <legend class="font-semibold">Highlighted Projects</legend>
+      <textarea name="projects" placeholder="Key projects (title, tech, your contribution, impact)" class="w-full" rows="4"></textarea>
+    </fieldset>
+
+    <fieldset class="border p-4 rounded-xl">
+      <legend class="font-semibold">Education</legend>
+      <textarea name="education"  placeholder="Degrees, institutions, dates, GPA / honours" class="w-full"></textarea>
+    </fieldset>
+
+    <fieldset class="border p-4 rounded-xl">
+      <legend class="font-semibold">Certifications & Awards</legend>
+      <textarea name="certifications" placeholder="Relevant certificates, honours, awards" class="w-full"></textarea>
+    </fieldset>
+
+    <fieldset class="border p-4 rounded-xl">
+      <legend class="font-semibold">Languages Spoken</legend>
+      <input name="spokenLanguages" placeholder="e.g. English – native | Spanish – conversational" class="w-full" />
+    </fieldset>
+
+    <fieldset class="border p-4 rounded-xl">
+      <legend class="font-semibold">Additional Information</legend>
+      <textarea name="extra" placeholder="Volunteer work, hobbies, publications, etc." class="w-full"></textarea>
+    </fieldset>
+
+    <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-lg font-semibold">Preview & Score</button>
+  </form>
+
+  <section id="preview" class="border border-dashed p-4 mt-6 whitespace-pre-wrap"></section>
+
+  <section id="result" class="mt-4 text-lg"></section>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
